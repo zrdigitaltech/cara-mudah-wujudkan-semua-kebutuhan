@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export default function Error({ error, reset }) {
   useEffect(() => {
@@ -23,3 +24,8 @@ export default function Error({ error, reset }) {
     </>
   );
 }
+
+Error.propTypes = {
+  error: PropTypes.object.isRequired, // `error` harus berupa object
+  reset: PropTypes.func.isRequired // `reset` harus berupa function
+};

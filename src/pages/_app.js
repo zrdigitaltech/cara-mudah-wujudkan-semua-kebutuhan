@@ -1,10 +1,17 @@
-// import '@/styles/globals.css';
-// import '@/assets/css/bootstrap.css';
-// import '@/assets/css/fontawesome.all.min.css';
-// import '@/assets/css/fontawesome.min.css';
-// import '@/assets/css/font-awesome.min.css';
-// import '@/assets/css/style.css';
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from '@/redux/store';
+import PropTypes from 'prop-types';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
+
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired, // `Component` harus berupa elemen React
+  pageProps: PropTypes.object.isRequired // `pageProps` harus berupa object
+};

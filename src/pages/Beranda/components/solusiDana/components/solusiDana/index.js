@@ -1,12 +1,12 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 export default function Index() {
   const handleClick = () => {
-    // Implement the click and scroll functionality here
-    // For example, you can use a ref to scroll to the desired section
     const element = document.getElementById('Appsmpl');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80; // Jarak tambahan dari atas
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
     }
   };
 

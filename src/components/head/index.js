@@ -1,15 +1,21 @@
 import Head from 'next/head';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const Index = (props) => {
   const { title, description, author, keywords, themeColor, manifest, url, image, stylesheet } =
     props;
+  const domain = process.env.NEXT_PUBLIC_DOMAIN;
 
   return (
     <Fragment>
       <Head>
         {/* Page Title */}
         <title>{title}</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        ></meta>
 
         {/* Basic metas */}
         <meta name="description" content={description} />
@@ -19,7 +25,7 @@ const Index = (props) => {
         <link rel="manifest" href={manifest} />
         <link
           rel="icon"
-          href="./assets/images/AVA-NON-MASK-100x100.png"
+          href={domain + '/assets/images/AVA-NON-MASK-100x100.png'}
           type="image/x-icon"
           sizes="16x16"
         ></link>
@@ -44,6 +50,28 @@ const Index = (props) => {
       </Head>
     </Fragment>
   );
+};
+
+Index.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  keywords: PropTypes.string,
+  themeColor: PropTypes.string,
+  manifest: PropTypes.string,
+  url: PropTypes.string,
+  image: PropTypes.string,
+  stylesheet: PropTypes.node // Since stylesheet can be a JSX element
+};
+
+// ✅ Define default props (optional)
+Index.defaultProps = {
+  keywords: '',
+  themeColor: '#ffffff',
+  manifest: '/manifest.json',
+  url: '',
+  image: '',
+  stylesheet: null
 };
 
 export default Index;

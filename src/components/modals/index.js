@@ -1,67 +1,47 @@
+import React, { Fragment, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 const Index = (props) => {
-  const {
-    classModal,
-    idModal,
-    modalHeader,
-    modalBg,
-    modalHeading,
-    modalBody,
-    btnClose,
-    onClose,
-    style
-  } = props;
+  const { show, onClose, modalBody, modalFooter } = props;
+
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [show]);
+
+  if (!show) return null;
 
   return (
-    <div
-      className={`modal fade ${classModal}`}
-      id={idModal}
-      tabIndex="-1"
-      role="dialog"
-      aria-labelledby={idModal}
-      aria-hidden="true"
-      style={style}
-    >
-      <div className="modal-dialog modal-dialog-centered" role="document">
-        <div className="modal-content">
-          {modalHeader && (
-            <div className="modal-header">
-              {modalHeader}
-
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                onClick={onClose}
-              >
-                <i className="ml-symtwo-24-multiply-cross-math"></i>
+    <Fragment>
+      <div className={'modal fade show'} id={'myModal'} tabIndex="-1" role="dialog">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content mt13">
+            <div className="modal-header center">
+              <h5 className="modal-title">Form Pengajuan SolusiDana</h5>
+              <button onClick={onClose} className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
               </button>
-              {/* <!-- End of .close --> */}
             </div>
-          )}
-          {/* <!-- End of .modal-header --> */}
-
-          {modalBg}
-          {/* <!-- End of .modal-bg --> */}
-
-          {btnClose && (
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-              <i className="ml-symtwo-24-multiply-cross-math"></i>
-            </button>
-          )}
-          {/* <!-- End of .close --> */}
-
-          {modalHeading}
-          {/* <!-- End of .modal-heading --> */}
-
-          <div className="modal-body">{modalBody}</div>
-          {/* <!-- End of .modal-body --> */}
+            <div className="modal-body">{modalBody}</div>
+            <center>
+              <div className="modal-footer center">{modalFooter}</div>
+            </center>
+          </div>
         </div>
-        {/* <!-- End of .modal-content --> */}
       </div>
-      {/* <!-- End of .modal-dialog --> */}
-    </div>
+      <div className="modal-backdrop fade show"></div>
+    </Fragment>
   );
+};
+
+Index.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  modalBody: PropTypes.node.isRequired,
+  modalFooter: PropTypes.node.isRequired
 };
 
 export default Index;

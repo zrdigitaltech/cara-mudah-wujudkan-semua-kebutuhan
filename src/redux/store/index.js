@@ -1,9 +1,8 @@
-// store.js
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from '@/redux/reducer';
+import rootReducer from '@/redux/reducer'; // Sesuaikan dengan path reducer
 
-export const makeStore = () => {
-  return configureStore({
-    reducer: rootReducer
-  });
-};
+const store = configureStore({
+  reducer: rootReducer
+});
+
+export default store;

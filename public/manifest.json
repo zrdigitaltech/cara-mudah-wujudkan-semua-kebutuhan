@@ -1,0 +1,25 @@
+{
+  "short_name": "Adira",
+  "name": "Adira",
+  "icons": [
+    {
+      "src": "/cara-mudah-wujudkan-semua-kebutuhan/assets/images/512x512.webp",
+      "type": "image/webp",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/cara-mudah-wujudkan-semua-kebutuhan/assets/images/192x192.webp",
+      "type": "image/webp",
+      "sizes": "192x192"
+    }
+  ],
+  "id": "https://adira.co.id",
+  "start_url": "https://adira.co.id",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffffff",
+  "shortcuts": [],
+  "description": "SolusiDana Pinjaman Cepat Jaminan BPKB Motor dan Mobil",
+  "screenshots": []
+}

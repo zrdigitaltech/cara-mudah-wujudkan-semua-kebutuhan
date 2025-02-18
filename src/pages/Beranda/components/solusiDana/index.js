@@ -1,3 +1,4 @@
+import React from 'react';
 import SolusiDana from './components/solusiDana';
 import KeunggulanKami from './components/keunggulanKami';
 import KalkulatorSimulasiPinjaman from './components/kalkulatorSimulasiPinjaman';
