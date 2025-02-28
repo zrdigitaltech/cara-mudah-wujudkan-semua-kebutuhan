@@ -115,5 +115,5 @@ export default function Index(props) {
 }
 
 Index.propTypes = {
-  onClick: PropTypes.func.isRequired // `onClose` harus bertipe function dan wajib diisi
+  onClick: PropTypes.func.isRequired
 };

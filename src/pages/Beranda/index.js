@@ -43,7 +43,7 @@ export default function Index() {
 
   return (
     <Fragment>
-      <Header onClick={() => handleAjukanSekarang()} />
+      <Header handleAjukanSekarang={() => handleAjukanSekarang()} />
       <SolusiDana />
       <Info />
       <TataCaraPengajuan onClick={() => handleAjukanSekarang()} />

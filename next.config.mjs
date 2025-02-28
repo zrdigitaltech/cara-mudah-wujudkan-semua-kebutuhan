@@ -25,6 +25,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_DOMAIN: process.env.NEXT_PUBLIC_DOMAIN,
     NEXT_PUBLIC_DOMAIN_API: process.env.NEXT_PUBLIC_DOMAIN_API,
+    NEXT_PUBLIC_DOMAIN_PROXY: process.env.NEXT_PUBLIC_DOMAIN_PROXY,
   },
   async headers() {
     return [

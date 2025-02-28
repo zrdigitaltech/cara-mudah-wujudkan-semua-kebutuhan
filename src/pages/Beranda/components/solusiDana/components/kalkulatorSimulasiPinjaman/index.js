@@ -48,7 +48,6 @@ export default function Index() {
       setSelectedTab('motor');
       resetFormKendaraan('motor');
     } else {
-      getDataInsuranseType();
       setSelectedTab('mobil');
       resetFormKendaraan('mobil');
     }
@@ -146,6 +145,7 @@ export default function Index() {
 
   useEffect(() => {
     getDataArea();
+    getDataInsuranseType();
   }, []);
 
   return (
