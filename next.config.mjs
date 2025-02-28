@@ -2,7 +2,7 @@
 const nextConfig = {
   // basePath: "/",
   // output: "export",
-  swcMinify: true,
+  // swcMinify: true,
   images: {
     unoptimized: true,
     loader: 'akamai',
@@ -18,7 +18,7 @@ const nextConfig = {
     // Customize Webpack configuration if needed
     return config;
   },
-  generateMetadata: true,
+  // generateMetadata: true,
   eslint: {
     ignoreDuringBuilds: true,
   },

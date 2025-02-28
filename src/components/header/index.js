@@ -34,7 +34,7 @@ export default function Index(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent"></div>
             <a
               className="navbar-brand mpl-ajukan-sekarang pointer"
-              onClick={handleAjukanSekarang ? handleAjukanSekarang : undefined}
+              onClick={handleAjukanSekarang}
               style={{
                 border: 'solid #333',
                 borderRadius: '10px'
@@ -86,7 +86,7 @@ export default function Index(props) {
         
         <a
           className="overlay-v2 font-weight-bolder pointer"
-          onClick={handleAjukanSekarang ? handleAjukanSekarang : undefined}
+          onClick={handleAjukanSekarang}
         >
           Ajukan Sekarang
         </a>
@@ -104,7 +104,7 @@ export default function Index(props) {
             style={{ width: '100%' }} // Ensure it scales responsively
           />
         
-        <a className="pointer" onClick={handleAjukanSekarang ? handleAjukanSekarang : undefined}>
+        <a className="pointer" onClick={handleAjukanSekarang}>
           <Image
             className="overlay"
             src="./assets/images/button-ajukan-header-mobile.png"
