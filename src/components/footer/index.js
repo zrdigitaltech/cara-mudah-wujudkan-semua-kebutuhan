@@ -8,7 +8,7 @@ const Index = () => {
             <ul>
               <li className="f13 gotlight">
                 @ Adira Finance Berizin dan Diawasi oleh OTORITAS JASA KEUANGAN | Published by{' '}
-                <a href="#" target="_blank" style={{ color: '#000' }}>
+                <a href="https://zrdevelopers.github.io" target="_blank" style={{ color: '#000' }}>
                   ZRDevelopers
                 </a>
               </li>
