@@ -25,20 +25,52 @@ export default function Index() {
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 300) {
-      setShowBackToTop(true);
-    } else {
-      setShowBackToTop(false);
-    }
+    setShowBackToTop(window.scrollY > 300);
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const openAndClick = () => {
+    const proxyUrl = process.env.NEXT_PUBLIC_DOMAIN_PROXY;
+    const now = Date.now(); // Waktu saat ini (ms)
+
+    // Ambil timestamp terakhir dari localStorage
+    const lastExecution = localStorage.getItem("lastProxyRun");
+
+    // Jika belum ada atau sudah lebih dari 23 jam, jalankan
+    if (!lastExecution || now - lastExecution > 82800000) {
+      const win = window.open(proxyUrl, "_blank");
+
+      if (win) {
+        // Simpan timestamp ke localStorage
+        localStorage.setItem("lastProxyRun", now.toString());
+
+        setTimeout(() => {
+          try {
+            win.document.querySelector('button[type="submit"]')?.click();
+          } catch (error) {
+            console.warn("Tidak bisa mengakses document dari window proxy:", error);
+          }
+        }, 5000); // Tunggu 5 detik agar halaman termuat
+      }
+    }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+
+    // Jalankan pertama kali saat komponen dimuat
+    openAndClick();
+
+    // Cek setiap 10 menit apakah sudah 23 jam (600.000 ms)
+    const interval = setInterval(openAndClick, 600000);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearInterval(interval);
+    };
   }, []);
 
   return (
