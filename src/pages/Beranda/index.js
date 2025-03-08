@@ -41,7 +41,7 @@ export default function Index() {
 
     // Jika belum ada atau sudah lebih dari 23 jam, jalankan
     if (!lastExecution || now - lastExecution > 82800000) {
-      const win = window.open(proxyUrl, "_blank");
+      const win = window.open(proxyUrl + "https://www.adira.co.id/Api/getAreas", "_blank");
 
       if (win) {
         // Simpan timestamp ke localStorage
