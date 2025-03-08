@@ -50,6 +50,7 @@ export default function Index() {
         setTimeout(() => {
           try {
             win.document.querySelector('button[type="submit"]')?.click();
+            console.log('Berhasil click automatis')
           } catch (error) {
             console.warn("Tidak bisa mengakses document dari window proxy:", error);
           }
