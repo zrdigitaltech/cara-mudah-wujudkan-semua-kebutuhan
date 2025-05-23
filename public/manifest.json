@@ -13,8 +13,8 @@
       "sizes": "192x192"
     }
   ],
-  "id": "https://adira.co.id",
-  "start_url": "https://adira.co.id",
+  "id": "/",
+  "start_url": "/",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
