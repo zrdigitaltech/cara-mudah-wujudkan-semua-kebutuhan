@@ -63,10 +63,10 @@ export default function Index() {
     window.addEventListener("scroll", handleScroll);
 
     // Jalankan pertama kali saat komponen dimuat
-    openAndClick();
+    // openAndClick();
 
     // Cek setiap 10 menit apakah sudah 23 jam (600.000 ms)
-    const interval = setInterval(openAndClick, 600000);
+    // const interval = setInterval(openAndClick, 600000);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

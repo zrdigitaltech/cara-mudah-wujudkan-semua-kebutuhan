@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://zrdevelopers.github.io/cara-mudah-wujudkan-semua-kebutuhan
+Host: https://ZRDigitalTech.github.io/cara-mudah-wujudkan-semua-kebutuhan
 
 # Sitemaps
-Sitemap: https://zrdevelopers.github.io/cara-mudah-wujudkan-semua-kebutuhan/sitemap.xml
+Sitemap: https://ZRDigitalTech.github.io/cara-mudah-wujudkan-semua-kebutuhan/sitemap.xml

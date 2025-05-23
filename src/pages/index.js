@@ -11,7 +11,7 @@ export default function Home() {
       <Heads
         title="SolusiDana Pinjaman Cepat Jaminan BPKB Motor dan Mobil - Adira"
         description="Dana pinjaman uang tunai cepat lewat pengajuan gadai BPKB motor dengan cicilan ringan dan bunga rendah. Proses cepat, aman, dan mudah di Adira Finance"
-        author="ZRDevelopers"
+        author="ZRDigitalTech"
         keywords="gadai bpkb motor, gadai bpkb mobil"
         // themeColor
         manifest={domain + '/manifest.json'}
